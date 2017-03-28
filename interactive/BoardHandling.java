@@ -1789,7 +1789,7 @@ public class BoardHandling
     /**
      * Used for running an interactive action in a seperate thread.
      */
-    private InteractiveActionThread interactive_action_thread = null;
+    public InteractiveActionThread interactive_action_thread = null;
     /** To display all incomplete connections on the screen. */
     private RatsNest ratsnest = null;
     /** To display all clearance violations between items on the screen. */

@@ -63,5 +63,5 @@ class BoardMenuBar extends javax.swing.JMenuBar
         this.file_menu.add_design_dependent_items();
     }
     
-    private BoardMenuFile file_menu;
+    public BoardMenuFile file_menu;
 }

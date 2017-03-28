@@ -99,10 +99,10 @@ class BoardToolbar extends javax.swing.JPanel
         
         final javax.swing.JToolBar middle_toolbar = new javax.swing.JToolBar();
         
-        final javax.swing.JButton autoroute_button = new javax.swing.JButton();
-        autoroute_button.setText(resources.getString("autoroute_button"));
-        autoroute_button.setToolTipText(resources.getString("autoroute_button_tooltip"));
-        autoroute_button.addActionListener(new java.awt.event.ActionListener()
+        this.autoroute_button = new javax.swing.JButton();
+        this.autoroute_button.setText(resources.getString("autoroute_button"));
+        this.autoroute_button.setToolTipText(resources.getString("autoroute_button_tooltip"));
+        this.autoroute_button.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
@@ -110,7 +110,7 @@ class BoardToolbar extends javax.swing.JPanel
             }
         });
         
-        middle_toolbar.add(autoroute_button);
+        middle_toolbar.add(this.autoroute_button);
         
         final javax.swing.JLabel separator_2 = new javax.swing.JLabel();
         separator_2.setMaximumSize(new java.awt.Dimension(10, 10));
@@ -307,6 +307,7 @@ class BoardToolbar extends javax.swing.JPanel
     private final javax.swing.JToggleButton select_button;
     private final javax.swing.JToggleButton route_button;
     private final javax.swing.JToggleButton drag_button;
+    public final javax.swing.JButton autoroute_button;
     final javax.swing.JFormattedTextField unit_factor_field;
     final javax.swing.JComboBox unit_combo_box;
 }

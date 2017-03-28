@@ -52,7 +52,7 @@ public class AutorouteSettings implements java.io.Serializable
         vias_allowed = true;
         with_fanout = false;
         with_autoroute = true;
-        with_postroute = true;
+        with_postroute = false; // post-route disabled
         via_costs = 50;
         plane_via_costs = 5;
 

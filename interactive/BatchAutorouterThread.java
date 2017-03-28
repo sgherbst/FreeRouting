@@ -121,6 +121,8 @@ public class BatchAutorouterThread extends InteractiveActionThread
             {
                 tests.Validate.multiple_of_45_degree("after autoroute: ", hdlg.get_routing_board());
             }
+            // signal that routing is complete
+            actionDone.release();
         } catch (Exception e)
         {
 
@@ -158,4 +160,5 @@ public class BatchAutorouterThread extends InteractiveActionThread
     }
     private final BatchAutorouter batch_autorouter;
     private final BatchOptRoute batch_opt_route;
+
 }

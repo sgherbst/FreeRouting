@@ -666,13 +666,13 @@ public class BoardFrame extends javax.swing.JFrame
     final javax.swing.JScrollPane scroll_pane;
     
     /** The menubar of this frame */
-    final BoardMenuBar menubar;
+    public final BoardMenuBar menubar;
     
     /** The panel with the graphical representation of the board. */
     final BoardPanel board_panel;
     
     /** The panel with the toolbars */
-    private final BoardToolbar toolbar_panel;
+    public final BoardToolbar toolbar_panel;
     
     /** The toolbar used in the selected item state. */
     private final javax.swing.JToolBar select_toolbar;

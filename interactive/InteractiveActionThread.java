@@ -19,6 +19,7 @@
  *
  */
 package interactive;
+import java.util.concurrent.Semaphore;
 
 /**
  * Used for running an interactive action in a seperate Thread,
@@ -28,6 +29,7 @@ package interactive;
  */
 public abstract class InteractiveActionThread extends Thread implements datastructures.Stoppable
 {
+    public Semaphore actionDone = new Semaphore(0);
 
     public static InteractiveActionThread get_autoroute_instance(BoardHandling p_board_handling)
     {

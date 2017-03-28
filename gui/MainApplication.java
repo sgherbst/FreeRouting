@@ -21,6 +21,8 @@
 package gui;
 
 import board.TestLevel;
+import java.awt.event.WindowEvent;
+import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -126,6 +128,23 @@ public class MainApplication extends javax.swing.JFrame
                     Runtime.getRuntime().exit(0);
                 }
             });
+
+            // Start the autorouter
+            new_frame.toolbar_panel.autoroute_button.doClick();
+
+            // Wait for autorouter to finish
+            try {
+                new_frame.board_panel.board_handling.interactive_action_thread.actionDone.acquire();
+            }
+            catch(InterruptedException e) {
+                // Do nothing for now...
+            }
+
+            // Export SPECCTRA file
+            new_frame.menubar.file_menu.write_session_file_item.doClick();
+
+            // Quit
+            new_frame.dispatchEvent(new WindowEvent(new_frame, WindowEvent.WINDOW_CLOSING));
         }
         else
         {
@@ -341,7 +360,9 @@ public class MainApplication extends javax.swing.JFrame
         {
             test_level = TestLevel.RELEASE_VERSION;
         }
-        BoardFrame new_frame = new BoardFrame(p_design_file, p_option, test_level, p_locale, !p_is_test_version);
+        // Disabled the cancel dialog
+        BoardFrame new_frame = new BoardFrame(p_design_file, p_option, test_level, p_locale, false /* !p_is_test_version */);
+
         boolean read_ok = new_frame.read(input_stream, p_design_file.is_created_from_text_file(), p_message_field);
         if (!read_ok)
         {

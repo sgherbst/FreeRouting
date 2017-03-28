@@ -158,10 +158,10 @@ public class BoardMenuFile extends javax.swing.JMenu
         board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
         boolean host_cad_is_eagle = routing_board.communication.host_cad_is_eagle();
 
-        javax.swing.JMenuItem write_session_file_item = new javax.swing.JMenuItem();
-        write_session_file_item.setText(resources.getString("session_file"));
-        write_session_file_item.setToolTipText(resources.getString("session_file_tooltip"));
-        write_session_file_item.addActionListener(new java.awt.event.ActionListener()
+        this.write_session_file_item = new javax.swing.JMenuItem();
+        this.write_session_file_item.setText(resources.getString("session_file"));
+        this.write_session_file_item.setToolTipText(resources.getString("session_file_tooltip"));
+        this.write_session_file_item.addActionListener(new java.awt.event.ActionListener()
         {
 
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -172,7 +172,7 @@ public class BoardMenuFile extends javax.swing.JMenu
 
         if ((routing_board.get_test_level() != board.TestLevel.RELEASE_VERSION || !host_cad_is_eagle))
         {
-            this.add(write_session_file_item);
+            this.add(this.write_session_file_item);
         }
 
         javax.swing.JMenuItem write_eagle_session_script_item = new javax.swing.JMenuItem();
@@ -323,4 +323,5 @@ public class BoardMenuFile extends javax.swing.JMenu
     private final BoardFrame board_frame;
     private final boolean session_file_option;
     private final java.util.ResourceBundle resources;
+    public javax.swing.JMenuItem write_session_file_item;
 }
